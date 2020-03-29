@@ -17,7 +17,7 @@ suspicious_domains = []
 suspicious_emails = []
 suspicious_ips = []
 
-with open('names.csv', newline='') as csvfile:
+with open('merged.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     line_count = 0
     for row in reader:
@@ -43,7 +43,8 @@ with open('ips.csv', newline='') as csvfile:
             suspicious_ips.append(row[0].split('/')[0])
             line_count += 1
 
-
+'''
+# This URL doesn't work hence commented
 
 urllib.request.urlretrieve(
     "https://thorn-perception.s3.amazonaws.com/thorn-perceptual-deduplication-example.zip",
@@ -54,6 +55,7 @@ with zipfile.ZipFile('thorn-perceptual-deduplication-example.zip') as f:
     f.extractall('.')
 
 filepaths = glob.glob('thorn-perceptual-deduplication-example/*.jpg')
+'''
 
 
 # Now we can do whatever we want with the duplicates. We could just delete
@@ -77,5 +79,6 @@ def is_ip_suspicious(ip):
     return ip in suspicious_ips
 
 def is_img_suspicious(img):
-    duplicate_pairs = tools.deduplicate(files=filepaths, hashers=[(hashers.PHash(hash_size=16), 0.2)])
-    print(duplicate_pairs)
+    return True
+    # duplicate_pairs = tools.deduplicate(files=filepaths, hashers=[(hashers.PHash(hash_size=16), 0.2)])
+    # print(duplicate_pairs)
