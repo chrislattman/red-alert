@@ -10,7 +10,7 @@ names = []
 phones = []
 addresses = []
 
-for i in range(1, 6):
+for i in range(1, 1682):
 	counter = 1
 	driver.get("https://www.rubmaps.ch/?i_agree_notice&to=%2Fadvanced-search-2694152-" + str(i))
 	content = driver.page_source
