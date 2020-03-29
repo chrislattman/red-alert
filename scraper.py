@@ -2,13 +2,15 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 
-driver = webdriver.Chrome("/usr/local/bin/chromedriver")
+options = webdriver.ChromeOptions()  
+options.add_argument("--headless")
+driver = webdriver.Chrome("/usr/local/bin/chromedriver", options=options)
 
-names=[]
-phones=[]
-addresses=[]
+names = []
+phones = []
+addresses = []
 
-for i in range(1, 1682):
+for i in range(1, 6):
 	counter = 1
 	driver.get("https://www.rubmaps.ch/?i_agree_notice&to=%2Fadvanced-search-2694152-" + str(i))
 	content = driver.page_source
