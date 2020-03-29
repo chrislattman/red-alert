@@ -12,7 +12,7 @@ def flag_suspicious_address(addr):
 
 def flag_suspicious_image(img):
     # compares to hash using https://perception.thorn.engineering/en/latest/index.html api
-    pass
+    return db.is_img_suspicious(img)
 
 def flag_suspicious_email(email):
     # flag based on both the email string and the email domain
