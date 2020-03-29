@@ -4,10 +4,11 @@ This is the public API that we share with other websites/apps.
 import db # this is just whatever db we end up using 
 
 def flag_suspicious_phone(phone):
-    pass
+    # parse list of suspicious phone numbers from the csv file
+    return db.is_phone_suspicious(phone)
 
 def flag_suspicious_address(addr):
-    pass
+    return db.is_addr_suspicious(addr)
 
 def flag_suspicious_image(img):
     # compares to hash using https://perception.thorn.engineering/en/latest/index.html api
