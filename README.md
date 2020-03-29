@@ -1,2 +1,2 @@
 # red-alert
-Check out the public API and the massage_parlors.csv file
+Check out the public API and the massage_parlors.csv file (data obtained from RubMaps)
