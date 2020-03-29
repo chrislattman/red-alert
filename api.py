@@ -11,8 +11,8 @@ def flag_suspicious_address(addr):
 def flag_suspicious_image(img):
     pass
 
-def flag_suspicious_email(img):
-    pass
+def flag_suspicious_email(email):
+    print(email)
 
 def flag_suspicious_ip(ip):
     pass
